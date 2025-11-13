@@ -11,8 +11,16 @@ config_version=5
 [application]
 
 config/name="idlesurvivor"
+run/main_scene="uid://cqoqbydymbryu"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=532
+window/size/viewport_height=1123
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [rendering]
 
