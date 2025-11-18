@@ -1,13 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://bctmk6jmk8imm"]
+[gd_scene load_steps=6 format=3 uid="uid://bctmk6jmk8imm"]
 
 [ext_resource type="Texture2D" uid="uid://8u8p1e21e3x2" path="res://icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dlbxeqv8gwm8k" path="res://player.gd" id="1_onrkg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onrkg"]
+bg_color = Color(0.882353, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3pqv"]
+bg_color = Color(1.11182e-05, 0.734547, 0.156184, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(128, 128)
 
 [node name="Player" type="Node2D"]
+script = ExtResource("1_onrkg")
+health = 55
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_4flbx")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="healthBar" type="ProgressBar" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -19,5 +31,12 @@ offset_right = 67.0
 offset_bottom = 94.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_onrkg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_i3pqv")
 value = 26.7
 show_percentage = false
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_onrkg")
