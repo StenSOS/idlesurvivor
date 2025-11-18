@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqoqbydymbryu"]
+[gd_scene load_steps=3 format=3 uid="uid://cqoqbydymbryu"]
 
 [ext_resource type="Script" uid="uid://ddlvmim6ogx5y" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bctmk6jmk8imm" path="res://player.tscn" id="2_0xm2m"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ig7tw")
+winTime = 600.0
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -16,4 +18,22 @@ offset_top = 65.0
 offset_right = 20.0
 offset_bottom = 88.0
 grow_horizontal = 2
-text = "DENEME"
+text = "TİME"
+
+[node name="moneyLabel" type="Label" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "MONEY"
+
+[node name="diamondLabel" type="Label" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "DİAMOND"
+
+[node name="Player" parent="." instance=ExtResource("2_0xm2m")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
