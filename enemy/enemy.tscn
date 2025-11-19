@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ditoop2pfk6wu"]
+
+[ext_resource type="Texture2D" uid="uid://8u8p1e21e3x2" path="res://icon.svg" id="1_2mvqj"]
+[ext_resource type="Script" uid="uid://cgo25vuun1ouy" path="res://enemy/enemy.gd" id="1_ofsxj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2mvqj"]
+size = Vector2(126, 126)
+
+[node name="enemy" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_ofsxj")
+damage = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2mvqj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.686275, 0, 0, 1)
+texture = ExtResource("1_2mvqj")
+
+[node name="attackCooldownTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="attackCooldownTimer" to="." method="_on_attack_cooldown_timer_timeout"]

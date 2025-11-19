@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqoqbydymbryu"]
+[gd_scene load_steps=4 format=3 uid="uid://cqoqbydymbryu"]
 
-[ext_resource type="Script" uid="uid://ddlvmim6ogx5y" path="res://main.gd" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://bctmk6jmk8imm" path="res://player.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://ddlvmim6ogx5y" path="res://main/main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bctmk6jmk8imm" path="res://player/player.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://ditoop2pfk6wu" path="res://enemy/enemy.tscn" id="3_xwkvk"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ig7tw")
@@ -18,11 +19,13 @@ offset_top = 65.0
 offset_right = 20.0
 offset_bottom = 88.0
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 35
 text = "TİME"
 
 [node name="moneyLabel" type="Label" parent="HUD"]
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_font_sizes/font_size = 25
 text = "MONEY"
 
 [node name="diamondLabel" type="Label" parent="HUD"]
@@ -32,8 +35,14 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
+theme_override_font_sizes/font_size = 25
 text = "DİAMOND"
 
 [node name="Player" parent="." instance=ExtResource("2_0xm2m")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="enemyHolder" type="Node2D" parent="."]
+
+[node name="enemy" parent="enemyHolder" instance=ExtResource("3_xwkvk")]
+position = Vector2(-198, 290)

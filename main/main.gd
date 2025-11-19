@@ -3,13 +3,16 @@ extends Node2D
 enum GameState {START, RUNNING, END}
 
 @onready var timer_label = $HUD/timerLabel
+@onready var player = $Player
+
 
 @export var winTime :float
 
 var elapsedTime := 0.0
 
 func _process(delta):
-	elapsedTime += delta
+	if not player.isDead:
+		elapsedTime += delta
 	
 	var minutes = int(elapsedTime)/60
 	var seconds = int(elapsedTime)%60
