@@ -1,8 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqoqbydymbryu"]
+[gd_scene load_steps=7 format=3 uid="uid://cqoqbydymbryu"]
 
 [ext_resource type="Script" uid="uid://ddlvmim6ogx5y" path="res://main/main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bctmk6jmk8imm" path="res://player/player.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://wiqt1pnxcdyq" path="res://main/enemy_holder.gd" id="3_c651c"]
 [ext_resource type="PackedScene" uid="uid://ditoop2pfk6wu" path="res://enemy/enemy.tscn" id="3_xwkvk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwkvk"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 0.843137, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c651c"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ig7tw")
@@ -10,31 +35,81 @@ winTime = 600.0
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="timerLabel" type="Label" parent="HUD"]
+[node name="Panel" type="Panel" parent="HUD"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_top = 65.0
-offset_right = 20.0
-offset_bottom = 88.0
+offset_left = -55.0
+offset_top = 121.0
+offset_right = 55.0
+offset_bottom = 161.0
 grow_horizontal = 2
+
+[node name="timerLabel" type="Label" parent="HUD/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -24.5
+offset_right = 41.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 35
 text = "TİME"
 
-[node name="moneyLabel" type="Label" parent="HUD"]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Panel2" type="Panel" parent="HUD"]
+offset_left = 30.0
+offset_top = 24.0
+offset_right = 180.0
+offset_bottom = 85.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xwkvk")
+
+[node name="moneyLabel" type="Label" parent="HUD/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -17.5
+offset_right = 45.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "MONEY"
 
-[node name="diamondLabel" type="Label" parent="HUD"]
+[node name="Panel3" type="Panel" parent="HUD"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 23.0
+offset_left = -188.0
+offset_top = 24.0
+offset_right = -30.0
+offset_bottom = 84.0
 grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_c651c")
+
+[node name="diamondLabel" type="Label" parent="HUD/Panel3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.5
+offset_top = -17.5
+offset_right = 61.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "DİAMOND"
 
@@ -43,6 +118,7 @@ text = "DİAMOND"
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="enemyHolder" type="Node2D" parent="."]
+script = ExtResource("3_c651c")
 
 [node name="enemy" parent="enemyHolder" instance=ExtResource("3_xwkvk")]
 position = Vector2(-198, 290)

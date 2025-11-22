@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var damage: int = 5
 @export var attack_distance: float = 175
 @export var attack_rate: float = 1.0   # saniyede bir vur
+@export var maxHp := 10
+@export var currentHp := maxHp
 
 @onready var attack_cooldown_timer = $attackCooldownTimer
 
