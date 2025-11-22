@@ -29,7 +29,7 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" groups=["mainRoot"]]
 script = ExtResource("1_ig7tw")
 winTime = 600.0
 
@@ -116,6 +116,7 @@ text = "DİAMOND"
 [node name="Player" parent="." instance=ExtResource("2_0xm2m")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.59, 0.59)
 
 [node name="enemyHolder" type="Node2D" parent="."]
 script = ExtResource("3_c651c")

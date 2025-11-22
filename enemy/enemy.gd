@@ -8,11 +8,13 @@ extends CharacterBody2D
 @export var currentHp := maxHp
 
 @onready var attack_cooldown_timer = $attackCooldownTimer
-
+var mainNode = null
 var player : Node2D
 
-func _ready():	
+func _ready():    
 	player = get_tree().get_first_node_in_group("player")
+	# main_root grubundaki ilk düğümü (bizim main.gd) bulup değişkene atıyoruz
+	mainNode = get_tree().get_first_node_in_group("mainRoot")
 	attack_cooldown_timer.wait_time = attack_rate
 	attack_cooldown_timer.start()
 
@@ -33,3 +35,12 @@ func _on_attack_cooldown_timer_timeout():
 	
 	if global_position.distance_to(player.global_position) <= attack_distance:
 		player.takeDamage(damage)
+
+func takeDamage(amount: int):
+	currentHp -= amount
+	if currentHp <= 0:
+		die()
+
+func die():
+	mainNode.addMoney()
+	queue_free()

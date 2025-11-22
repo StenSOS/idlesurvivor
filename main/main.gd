@@ -13,6 +13,7 @@ enum GameState {START, RUNNING, END}
 @export var diamonds : int = 0
 
 var elapsedTime := 0.0
+var moneyPerEnemy :int = 1
 
 func _ready():
 	update_ui()
@@ -29,11 +30,8 @@ func _process(delta):
 	if elapsedTime >= winTime:
 		print("win")
 
-func add_currency(amount: int, is_diamond: bool = false):
-	if is_diamond:
-		diamonds += amount
-	else:
-		money += amount
+func addMoney():
+	money += moneyPerEnemy
 	update_ui()
 
 func update_ui():
