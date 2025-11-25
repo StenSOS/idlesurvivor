@@ -9,13 +9,15 @@ enum GameState {START, RUNNING, END}
 @onready var player = $Player
 
 @export var winTime :float
-@export var money : int = 0
-@export var diamonds : int = 0
+@export var money : int 
+@export var diamonds : int 
 
 var elapsedTime := 0.0
 var moneyPerEnemy :int = 1
 
 func _ready():
+	money = GameData.totalMoney
+	diamonds = GameData.totalDiamonds
 	update_ui()
 
 func _process(delta):
