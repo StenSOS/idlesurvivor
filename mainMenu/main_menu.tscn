@@ -1,0 +1,137 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx55u8tqd6t24"]
+
+[ext_resource type="Script" uid="uid://dbrabpltusiu6" path="res://mainMenu/main_menu.gd" id="1_27owx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urgxs"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 0.843137, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27owx"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="mainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_27owx")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Panel2" type="Panel" parent="HUD"]
+offset_left = 30.0
+offset_top = 24.0
+offset_right = 180.0
+offset_bottom = 85.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_urgxs")
+
+[node name="moneyLabel" type="Label" parent="HUD/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -17.5
+offset_right = 45.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "MONEY"
+
+[node name="Panel3" type="Panel" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -188.0
+offset_top = 24.0
+offset_right = -30.0
+offset_bottom = 84.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_27owx")
+
+[node name="diamondLabel" type="Label" parent="HUD/Panel3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.5
+offset_top = -17.5
+offset_right = 61.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "DİAMOND"
+
+[node name="playButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 147.0
+offset_top = 492.0
+offset_right = 387.0
+offset_bottom = 569.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "PLAY"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 67.0
+offset_top = 676.0
+offset_right = 438.0
+offset_bottom = 816.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.00422, 1.02353)
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="PlayerUps" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TurretUps" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Ups" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="playButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/PlayerUps" to="." method="_on_player_ups_pressed"]
+[connection signal="pressed" from="HBoxContainer/TurretUps" to="." method="_on_turret_ups_pressed"]
+[connection signal="pressed" from="HBoxContainer/Ups" to="." method="_on_ups_pressed"]

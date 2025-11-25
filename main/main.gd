@@ -13,7 +13,6 @@ enum GameState {START, RUNNING, END}
 @export var diamonds : int 
 
 var elapsedTime := 0.0
-var moneyPerEnemy :int = 1
 
 func _ready():
 	money = GameData.totalMoney
@@ -24,6 +23,8 @@ func _process(delta):
 	if not player.isDead:
 		elapsedTime += delta
 	
+	if player.isDead:
+		gameOver()
 	var minutes = int(elapsedTime)/60
 	var seconds = int(elapsedTime)%60
 	
@@ -33,9 +34,12 @@ func _process(delta):
 		print("win")
 
 func addMoney():
-	money += moneyPerEnemy
+	GameData.totalMoney += GameData.moneyPerEnemy
 	update_ui()
 
+func gameOver():
+	get_tree().change_scene_to_file("res://mainMenu/main_menu.tscn")
+
 func update_ui():
-	money_label.text = str(money)
-	diamond_label.text =  str(diamonds)
+	money_label.text = str(GameData.totalMoney)
+	diamond_label.text =  str(GameData.totalDiamonds)

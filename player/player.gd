@@ -3,12 +3,18 @@ extends Node2D
 @onready var health_bar = $healthBar
 @onready var enemy_holder = $"../enemyHolder"
 
-@export var maxHealth : int = 100
-@export var health := maxHealth
-@export var playerDamage :int = 5
-@export var attack_cooldown : float = 1.0
+@export var maxHealth : int 
+@export var health: int
+@export var playerDamage :int 
+@export var attack_cooldown : float 
 var current_attack_timer : float = 0.0
 var isDead : bool = false
+
+func _ready():
+	maxHealth = GameData.playerMaxHealth
+	health = maxHealth
+	playerDamage = GameData.playerDamage
+	attack_cooldown = GameData.playerAttackSpeed
 
 func  _process(delta):
 	health_bar.max_value= maxHealth
