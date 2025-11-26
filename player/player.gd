@@ -49,3 +49,4 @@ func gameOver():
 	if health <= 0:
 		isDead=true
 		print("dead")
+		get_tree().change_scene_to_file("res://mainMenu/main_menu.tscn")

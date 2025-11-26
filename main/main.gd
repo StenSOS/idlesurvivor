@@ -23,8 +23,6 @@ func _process(delta):
 	if not player.isDead:
 		elapsedTime += delta
 	
-	if player.isDead:
-		gameOver()
 	var minutes = int(elapsedTime)/60
 	var seconds = int(elapsedTime)%60
 	
@@ -36,9 +34,6 @@ func _process(delta):
 func addMoney():
 	GameData.totalMoney += GameData.moneyPerEnemy
 	update_ui()
-
-func gameOver():
-	get_tree().change_scene_to_file("res://mainMenu/main_menu.tscn")
 
 func update_ui():
 	money_label.text = str(GameData.totalMoney)

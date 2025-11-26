@@ -2,6 +2,8 @@ extends Control
 
 @onready var money_label = $HUD/Panel2/moneyLabel
 @onready var diamond_label = $HUD/Panel3/diamondLabel
+@onready var player_upgrade_panel = $PlayerUpgradePanel
+
 
 func _ready():
 	update_ui()
@@ -17,7 +19,10 @@ func _on_play_button_pressed():
 
 
 func _on_player_ups_pressed():
-	print("playerups button")
+	if player_upgrade_panel.visible:
+		player_upgrade_panel.visible = false
+	else:
+		player_upgrade_panel.visible = true
 
 
 func _on_turret_ups_pressed():
