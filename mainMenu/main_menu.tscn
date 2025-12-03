@@ -160,17 +160,16 @@ offset_left = 104.0
 offset_top = 17.0
 offset_right = 144.0
 offset_bottom = 40.0
-text = "Damage Upgrade
-+1 Damage"
+text = "+1 Player Damage
+5 Coin"
 
-[node name="Button" type="Button" parent="PlayerUpgradePanel/VBoxContainer/damageUpgradePanel"]
+[node name="playerDamageButton" type="Button" parent="PlayerUpgradePanel/VBoxContainer/damageUpgradePanel"]
 layout_mode = 0
 offset_left = 294.0
 offset_top = 11.0
 offset_right = 360.0
 offset_bottom = 73.0
 text = "Buy
-5 coin
 "
 
 [node name="healthUpgradePanel2" type="Panel" parent="PlayerUpgradePanel/VBoxContainer"]
@@ -269,7 +268,282 @@ layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 
+[node name="TurretUpgradePanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 82.0
+offset_top = 102.0
+offset_right = 476.0
+offset_bottom = 707.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TurretUpgradePanel"]
+layout_mode = 0
+offset_right = 394.0
+offset_bottom = 605.0
+
+[node name="damageUpgradePanel" type="Panel" parent="TurretUpgradePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="TurretUpgradePanel/VBoxContainer/damageUpgradePanel"]
+position = Vector2(50, 43)
+scale = Vector2(0.453125, 0.46875)
+texture = ExtResource("2_phg2d")
+
+[node name="Label" type="Label" parent="TurretUpgradePanel/VBoxContainer/damageUpgradePanel"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 17.0
+offset_right = 144.0
+offset_bottom = 40.0
+text = "Turret Damage Upgrade
++1 Damage"
+
+[node name="Button" type="Button" parent="TurretUpgradePanel/VBoxContainer/damageUpgradePanel"]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 11.0
+offset_right = 360.0
+offset_bottom = 73.0
+text = "Buy
+5 coin
+"
+
+[node name="healthUpgradePanel2" type="Panel" parent="TurretUpgradePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel2"]
+
+[node name="Label" type="Label" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel2"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="healthUpgradePanel3" type="Panel" parent="TurretUpgradePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel3"]
+
+[node name="Label" type="Label" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel3"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="healthUpgradePanel4" type="Panel" parent="TurretUpgradePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel4"]
+
+[node name="Label" type="Label" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel4"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="healthUpgradePanel5" type="Panel" parent="TurretUpgradePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel5"]
+
+[node name="Label" type="Label" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel5"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel5"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="healthUpgradePanel6" type="Panel" parent="TurretUpgradePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel6"]
+
+[node name="Label" type="Label" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel6"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel6"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="healthUpgradePanel7" type="Panel" parent="TurretUpgradePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel7"]
+
+[node name="Label" type="Label" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel7"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="TurretUpgradePanel/VBoxContainer/healthUpgradePanel7"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="UpgradePanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 82.0
+offset_top = 102.0
+offset_right = 476.0
+offset_bottom = 707.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UpgradePanel"]
+layout_mode = 0
+offset_right = 394.0
+offset_bottom = 605.0
+
+[node name="damageUpgradePanel" type="Panel" parent="UpgradePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="UpgradePanel/VBoxContainer/damageUpgradePanel"]
+position = Vector2(50, 43)
+scale = Vector2(0.453125, 0.46875)
+texture = ExtResource("2_phg2d")
+
+[node name="Label" type="Label" parent="UpgradePanel/VBoxContainer/damageUpgradePanel"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 17.0
+offset_right = 144.0
+offset_bottom = 40.0
+text = "Upgrade
++1 Damage"
+
+[node name="Button" type="Button" parent="UpgradePanel/VBoxContainer/damageUpgradePanel"]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 11.0
+offset_right = 360.0
+offset_bottom = 73.0
+text = "Buy
+5 coin
+"
+
+[node name="healthUpgradePanel2" type="Panel" parent="UpgradePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="UpgradePanel/VBoxContainer/healthUpgradePanel2"]
+
+[node name="Label" type="Label" parent="UpgradePanel/VBoxContainer/healthUpgradePanel2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="UpgradePanel/VBoxContainer/healthUpgradePanel2"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="healthUpgradePanel3" type="Panel" parent="UpgradePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="UpgradePanel/VBoxContainer/healthUpgradePanel3"]
+
+[node name="Label" type="Label" parent="UpgradePanel/VBoxContainer/healthUpgradePanel3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="UpgradePanel/VBoxContainer/healthUpgradePanel3"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="healthUpgradePanel4" type="Panel" parent="UpgradePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="UpgradePanel/VBoxContainer/healthUpgradePanel4"]
+
+[node name="Label" type="Label" parent="UpgradePanel/VBoxContainer/healthUpgradePanel4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="UpgradePanel/VBoxContainer/healthUpgradePanel4"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="healthUpgradePanel5" type="Panel" parent="UpgradePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="UpgradePanel/VBoxContainer/healthUpgradePanel5"]
+
+[node name="Label" type="Label" parent="UpgradePanel/VBoxContainer/healthUpgradePanel5"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="UpgradePanel/VBoxContainer/healthUpgradePanel5"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="healthUpgradePanel6" type="Panel" parent="UpgradePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="UpgradePanel/VBoxContainer/healthUpgradePanel6"]
+
+[node name="Label" type="Label" parent="UpgradePanel/VBoxContainer/healthUpgradePanel6"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="UpgradePanel/VBoxContainer/healthUpgradePanel6"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="healthUpgradePanel7" type="Panel" parent="UpgradePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="UpgradePanel/VBoxContainer/healthUpgradePanel7"]
+
+[node name="Label" type="Label" parent="UpgradePanel/VBoxContainer/healthUpgradePanel7"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="UpgradePanel/VBoxContainer/healthUpgradePanel7"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
 [connection signal="pressed" from="playButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/PlayerUps" to="." method="_on_player_ups_pressed"]
 [connection signal="pressed" from="HBoxContainer/TurretUps" to="." method="_on_turret_ups_pressed"]
 [connection signal="pressed" from="HBoxContainer/Ups" to="." method="_on_ups_pressed"]
+[connection signal="pressed" from="PlayerUpgradePanel/VBoxContainer/damageUpgradePanel/playerDamageButton" to="." method="_on_player_damage_button_pressed"]
