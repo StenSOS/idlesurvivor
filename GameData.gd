@@ -18,3 +18,4 @@ var turretFireRate : float = 2.0
 
 # --- FİYATLAR ---
 var playerDamageCost : int = 5
+var playerHealthCost : int = 10

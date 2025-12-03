@@ -8,6 +8,7 @@ extends Control
 @onready var upgrade_panel = $UpgradePanel
 
 @onready var playerDamageLabel = $PlayerUpgradePanel/VBoxContainer/damageUpgradePanel/Label
+@onready var playerHealthlabel = $PlayerUpgradePanel/VBoxContainer/healthUpgradePanel/Label
 
 func _ready():
 	update_ui()
@@ -19,6 +20,7 @@ func update_ui():
 	
 	# fiyat update
 	playerDamageLabel.text = "+1 Player Damage\n" + str(GameData.playerDamageCost) + " Coin" 
+	playerHealthlabel.text = "+5 Player Health\n" + str(GameData.playerHealthCost) + " Coin" 
 
 
 func _on_play_button_pressed():
@@ -57,7 +59,16 @@ func _on_player_damage_button_pressed():
 		GameData.totalMoney -= GameData.playerDamageCost
 		GameData.playerDamage += 1
 		GameData.playerDamageCost = int(GameData.playerDamageCost * 1.5)
-		playerDamageLabel.text = "+1 Player Damage\n" + str(GameData.playerDamageCost) + " Coin" 
+		update_ui()
+	else:
+		print("no money")
+
+
+func _on_player_health_button_pressed():
+	if GameData.totalMoney >= GameData.playerHealthCost:
+		GameData.totalMoney -= GameData.playerHealthCost
+		GameData.playerMaxHealth += 5
+		GameData.playerHealthCost = int(GameData.playerHealthCost * 1.5)
 		update_ui()
 	else:
 		print("no money")
