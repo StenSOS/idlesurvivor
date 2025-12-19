@@ -123,21 +123,41 @@ alignment = 1
 [node name="PlayerUps" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+text = "player upgrades
+"
 
 [node name="TurretUps" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+text = "turret upgrades"
 
 [node name="Ups" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+text = "general upgrades"
 
 [node name="PlayerUpgradePanel" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 82.0
 offset_top = 102.0
 offset_right = 476.0
 offset_bottom = 707.0
+
+[node name="title" type="Panel" parent="PlayerUpgradePanel"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = -30.0
+offset_right = 268.0
+
+[node name="Label" type="Label" parent="PlayerUpgradePanel/title"]
+layout_mode = 0
+offset_right = 163.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 18
+text = "Player Upgrades"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PlayerUpgradePanel"]
 layout_mode = 0
@@ -213,7 +233,7 @@ offset_left = 104.0
 offset_top = 17.0
 offset_right = 144.0
 offset_bottom = 40.0
-text = "+1 Player Damage
+text = "+1 Player upgrade1
 5 Coin"
 
 [node name="playerDamageButton" type="Button" parent="PlayerUpgradePanel/VBoxContainer/UpgradePanel"]
@@ -240,7 +260,7 @@ offset_left = 104.0
 offset_top = 17.0
 offset_right = 144.0
 offset_bottom = 40.0
-text = "+1 Player Damage
+text = "+1 Player upgrade2
 5 Coin"
 
 [node name="playerDamageButton" type="Button" parent="PlayerUpgradePanel/VBoxContainer/UpgradePanel2"]
@@ -267,7 +287,7 @@ offset_left = 104.0
 offset_top = 17.0
 offset_right = 144.0
 offset_bottom = 40.0
-text = "+1 Player Damage
+text = "+1 Player upgrade3
 5 Coin"
 
 [node name="playerDamageButton" type="Button" parent="PlayerUpgradePanel/VBoxContainer/UpgradePanel5"]
@@ -294,7 +314,7 @@ offset_left = 104.0
 offset_top = 17.0
 offset_right = 144.0
 offset_bottom = 40.0
-text = "+1 Player Damage
+text = "+1 Player upgrade4
 5 Coin"
 
 [node name="playerDamageButton" type="Button" parent="PlayerUpgradePanel/VBoxContainer/UpgradePanel6"]
@@ -443,6 +463,20 @@ layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 
+[node name="title" type="Panel" parent="TurretUpgradePanel"]
+offset_left = 104.0
+offset_top = -30.0
+offset_right = 268.0
+
+[node name="Label" type="Label" parent="TurretUpgradePanel/title"]
+layout_mode = 0
+offset_right = 163.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 18
+text = "Turret Upgrades"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="UpgradePanel" type="Panel" parent="."]
 visible = false
 layout_mode = 0
@@ -579,6 +613,20 @@ offset_bottom = 23.0
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+
+[node name="title" type="Panel" parent="UpgradePanel"]
+offset_left = 104.0
+offset_top = -30.0
+offset_right = 268.0
+
+[node name="Label" type="Label" parent="UpgradePanel/title"]
+layout_mode = 0
+offset_right = 163.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 18
+text = "General Upgrades"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="playButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/PlayerUps" to="." method="_on_player_ups_pressed"]

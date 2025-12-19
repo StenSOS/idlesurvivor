@@ -112,6 +112,14 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "DİAMOND"
 
+[node name="returnMenuButton" type="Button" parent="HUD"]
+offset_left = 243.0
+offset_top = 27.0
+offset_right = 301.0
+offset_bottom = 85.0
+text = "go
+back"
+
 [node name="Player" parent="." instance=ExtResource("2_0xm2m")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -119,3 +127,5 @@ zoom = Vector2(0.59, 0.59)
 
 [node name="enemyHolder" type="Node2D" parent="."]
 script = ExtResource("3_c651c")
+
+[connection signal="pressed" from="HUD/returnMenuButton" to="." method="_on_return_menu_button_pressed"]

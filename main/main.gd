@@ -38,3 +38,7 @@ func addMoney():
 func update_ui():
 	money_label.text = str(GameData.totalMoney)
 	diamond_label.text =  str(GameData.totalDiamonds)
+
+
+func _on_return_menu_button_pressed():
+	get_tree().change_scene_to_file("res://mainMenu/main_menu.tscn")
