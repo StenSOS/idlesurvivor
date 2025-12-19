@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cx55u8tqd6t24"]
+[gd_scene load_steps=12 format=3 uid="uid://cx55u8tqd6t24"]
 
 [ext_resource type="Script" uid="uid://dbrabpltusiu6" path="res://mainMenu/main_menu.gd" id="1_27owx"]
+[ext_resource type="Texture2D" uid="uid://cnk6606084yop" path="res://uamed.jpg" id="2_gmjeq"]
 [ext_resource type="Texture2D" uid="uid://8u8p1e21e3x2" path="res://icon.svg" id="2_phg2d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urgxs"]
@@ -27,12 +28,64 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i514n"]
+bg_color = Color(0.662314, 0.580348, 0.498702, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.92039, 0.828301, 0.670368, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbs4j"]
+bg_color = Color(0.564706, 0.486275, 0.407843, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.870588, 0.74902, 0.537255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phg2d"]
+bg_color = Color(0.383065, 0.436865, 0.285906, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.624811, 0.642515, 0.343637, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmjeq"]
+bg_color = Color(0.286275, 0.329412, 0.207843, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.541176, 0.556863, 0.282353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_osowc"]
+bg_color = Color(0.782232, 0.282365, 0.253187, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.282999, 0.196396, 0.222979, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ha25l"]
+bg_color = Color(0.564706, 0.180392, 0.160784, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_color = Color(0.141176, 0.0901961, 0.105882, 1)
+
 [node name="mainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_27owx")
+
+[node name="Uamed" type="Sprite2D" parent="."]
+position = Vector2(273, 512)
+scale = Vector2(0.981396, 1.091)
+texture = ExtResource("2_gmjeq")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -102,9 +155,13 @@ offset_bottom = 569.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_i514n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jbs4j")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jbs4j")
 text = "PLAY"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(450, 0)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -123,18 +180,20 @@ alignment = 1
 [node name="PlayerUps" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "player upgrades
-"
+theme_override_styles/hover = SubResource("StyleBoxFlat_phg2d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gmjeq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gmjeq")
 
 [node name="TurretUps" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "turret upgrades"
+theme_override_styles/hover = SubResource("StyleBoxFlat_osowc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ha25l")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ha25l")
 
 [node name="Ups" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "general upgrades"
 
 [node name="PlayerUpgradePanel" type="Panel" parent="."]
 visible = false
@@ -464,6 +523,7 @@ offset_right = 8.0
 offset_bottom = 8.0
 
 [node name="title" type="Panel" parent="TurretUpgradePanel"]
+layout_mode = 0
 offset_left = 104.0
 offset_top = -30.0
 offset_right = 268.0
@@ -615,6 +675,7 @@ offset_right = 8.0
 offset_bottom = 8.0
 
 [node name="title" type="Panel" parent="UpgradePanel"]
+layout_mode = 0
 offset_left = 104.0
 offset_top = -30.0
 offset_right = 268.0
