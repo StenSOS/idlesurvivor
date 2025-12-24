@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed: float = 100.0
-@export var damage: int = 5
+@export var damage: int = 20
 @export var attack_distance: float = 175
 @export var attack_rate: float = 1.0   # saniyede bir vur
 @export var maxHp := 10
