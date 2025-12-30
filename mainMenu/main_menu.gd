@@ -78,7 +78,7 @@ func _on_player_health_button_pressed():
 
 func _on_attack_speed_button_pressed():
 	if GameData.totalMoney >= GameData.playerAttackSpeedCost:
-		if GameData.playerAttackSpeed > 0.1 and GameData.playerRotationSpeed > 1:
+		if GameData.playerAttackSpeed > 0.3 and GameData.playerRotationSpeed > 1:
 			GameData.totalMoney -= GameData.playerAttackSpeedCost
 			GameData.playerAttackSpeed -= 0.1
 			GameData.playerRotationSpeed += 5
