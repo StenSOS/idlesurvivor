@@ -292,25 +292,27 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerUpgradePanel/VBoxContainer/UpgradePanel"]
-position = Vector2(50, 43)
-scale = Vector2(0.453125, 0.46875)
+position = Vector2(105, 80)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_phg2d")
 
-[node name="Label" type="Label" parent="PlayerUpgradePanel/VBoxContainer/UpgradePanel"]
+[node name="playerAttackSpeedLabel" type="Label" parent="PlayerUpgradePanel/VBoxContainer/UpgradePanel"]
 layout_mode = 0
-offset_left = 104.0
-offset_top = 17.0
-offset_right = 144.0
-offset_bottom = 40.0
-text = "+1 Player upgrade1
+offset_left = 218.0
+offset_top = 35.0
+offset_right = 512.0
+offset_bottom = 130.0
+theme_override_font_sizes/font_size = 27
+text = "-0.1 attack speed
 5 Coin"
 
-[node name="playerDamageButton" type="Button" parent="PlayerUpgradePanel/VBoxContainer/UpgradePanel"]
+[node name="playerAttackSpeed" type="Button" parent="PlayerUpgradePanel/VBoxContainer/UpgradePanel"]
 layout_mode = 0
-offset_left = 294.0
-offset_top = 11.0
-offset_right = 360.0
-offset_bottom = 73.0
+offset_left = 531.0
+offset_top = 33.0
+offset_right = 643.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 41
 text = "Buy
 "
 
@@ -705,3 +707,4 @@ vertical_alignment = 1
 [connection signal="pressed" from="HBoxContainer/Ups" to="." method="_on_ups_pressed"]
 [connection signal="pressed" from="PlayerUpgradePanel/VBoxContainer/damageUpgradePanel/playerDamageButton" to="." method="_on_player_damage_button_pressed"]
 [connection signal="pressed" from="PlayerUpgradePanel/VBoxContainer/healthUpgradePanel/playerHealthButton" to="." method="_on_player_health_button_pressed"]
+[connection signal="pressed" from="PlayerUpgradePanel/VBoxContainer/UpgradePanel/playerAttackSpeed" to="." method="_on_attack_speed_button_pressed"]

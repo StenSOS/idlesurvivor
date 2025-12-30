@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var enemy_scene: PackedScene = preload("res://enemy/enemy.tscn")
-@export var spawn_radius: float = 500.0
+@export var spawn_radius: float = 700.0
 
 var timer := 0.0
 var spawn_rate := 2.0  # Başlangıç: 2 saniye

@@ -8,7 +8,7 @@ extends Node2D
 @export var health: int
 @export var playerDamage :int 
 @export var attack_cooldown : float 
-@export var rotationSpeed : float = 10.0
+@export var rotationSpeed : float 
 
 var current_attack_timer : float = 0.0
 var isDead : bool = false
@@ -24,6 +24,7 @@ func _ready():
 	health = maxHealth
 	playerDamage = GameData.playerDamage
 	attack_cooldown = GameData.playerAttackSpeed
+	rotationSpeed = GameData.playerRotationSpeed
 
 func _process(delta):
 	if not isDead:

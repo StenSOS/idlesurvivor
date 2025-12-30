@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqoqbydymbryu"]
+[gd_scene load_steps=7 format=3 uid="uid://cqoqbydymbryu"]
 
 [ext_resource type="Script" uid="uid://ddlvmim6ogx5y" path="res://main/main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bctmk6jmk8imm" path="res://player/player.tscn" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://wiqt1pnxcdyq" path="res://main/enemy_holder.gd" id="3_c651c"]
+[ext_resource type="PackedScene" uid="uid://bamxhxs3wvldm" path="res://wall/wall.tscn" id="4_c651c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwkvk"]
 bg_color = Color(1, 1, 1, 1)
@@ -128,5 +129,8 @@ zoom = Vector2(0.59, 0.59)
 
 [node name="enemyHolder" type="Node2D" parent="."]
 script = ExtResource("3_c651c")
+
+[node name="wall" parent="." instance=ExtResource("4_c651c")]
+scale = Vector2(3, 3)
 
 [connection signal="pressed" from="HUD/returnMenuButton" to="." method="_on_return_menu_button_pressed"]

@@ -9,6 +9,7 @@ extends Control
 
 @onready var playerDamageLabel = $PlayerUpgradePanel/VBoxContainer/damageUpgradePanel/Label
 @onready var playerHealthlabel = $PlayerUpgradePanel/VBoxContainer/healthUpgradePanel/Label
+@onready var player_attack_speed_label = $PlayerUpgradePanel/VBoxContainer/UpgradePanel/playerAttackSpeedLabel
 
 func _ready():
 	update_ui()
@@ -20,7 +21,8 @@ func update_ui():
 	
 	# fiyat update
 	playerDamageLabel.text = "+1 Player Damage\n" + str(GameData.playerDamageCost) + " Coin" 
-	playerHealthlabel.text = "+5 Player Health\n" + str(GameData.playerHealthCost) + " Coin" 
+	playerHealthlabel.text = "+5 Player Health\n" + str(GameData.playerHealthCost) + " Coin"
+	player_attack_speed_label.text = "-0.1 Attack Speed\n" + str(GameData.playerAttackSpeedCost) + " Coin"
 
 
 func _on_play_button_pressed():
@@ -70,5 +72,19 @@ func _on_player_health_button_pressed():
 		GameData.playerMaxHealth += 5
 		GameData.playerHealthCost = int(GameData.playerHealthCost * 1.5)
 		update_ui()
+	else:
+		print("no money")
+
+
+func _on_attack_speed_button_pressed():
+	if GameData.totalMoney >= GameData.playerAttackSpeedCost:
+		if GameData.playerAttackSpeed > 0.1 and GameData.playerRotationSpeed > 1:
+			GameData.totalMoney -= GameData.playerAttackSpeedCost
+			GameData.playerAttackSpeed -= 0.1
+			GameData.playerRotationSpeed += 5
+			GameData.playerAttackSpeedCost = 2 * GameData.playerAttackSpeedCost
+			update_ui()
+		else:
+			print("speed is 0.1")
 	else:
 		print("no money")

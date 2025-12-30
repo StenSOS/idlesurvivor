@@ -1,3 +1,45 @@
-[gd_scene format=3 uid="uid://bamxhxs3wvldm"]
+[gd_scene load_steps=2 format=3 uid="uid://bamxhxs3wvldm"]
+
+[ext_resource type="Texture2D" uid="uid://8u8p1e21e3x2" path="res://icon.svg" id="1_sef87"]
 
 [node name="wall" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -59)
+scale = Vector2(1, 0.078125)
+texture = ExtResource("1_sef87")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(59, 0)
+rotation = 1.5708
+scale = Vector2(1, 0.078125)
+texture = ExtResource("1_sef87")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-64, 0)
+rotation = 1.5708
+scale = Vector2(1, 0.078125)
+texture = ExtResource("1_sef87")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(0, 60)
+scale = Vector2(1, 0.078125)
+texture = ExtResource("1_sef87")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-69, -64, -60, -56, 54, -54, 54, 55, -59, 55, -60, -56, -69, -63, -68, 63, 63, 63, 64, -64)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 70.0
+offset_right = 58.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.315)
+show_percentage = false
